@@ -1,0 +1,1032 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NokLib</name>
+    </assembly>
+    <members>
+        <member name="T:NokLib.EnumStringifier">
+            <summary>
+            Class for converting enums to strings, works by caching all enum string values in a dictionary. Thanks to caching its a lot faster and allocation free
+            </summary>
+        </member>
+        <member name="M:NokLib.EnumStringifier.ToString``1(``0)">
+            <summary>
+            Converts the enum to string, creates a conversion table if the enum is being converted for the first time
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.EnumStringifier.GetNames``1">
+            <summary>
+            Returns names of each enum value.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:NokLib.ConsoleUtils.ConsoleReader">
+            <summary>
+            Utility class for reading Console input
+            </summary>
+        </member>
+        <member name="T:NokLib.ConsoleUtils.ConsoleWriter">
+            <summary>
+            Utilities for writing into the console output
+            </summary>
+        </member>
+        <member name="T:NokLib.LimitReachedException">
+            <summary>
+            Thrown when a collection limit is reached
+            </summary>
+        </member>
+        <member name="T:NokLib.LimitReachedException`1">
+            <summary>
+            Thrown when a collection limit is reached
+            </summary>
+        </member>
+        <member name="T:NokLib.UnsupportedTypeException">
+            <summary>
+            Thrown when a type is not supported by a generic class/method
+            </summary>
+        </member>
+        <member name="M:NokLib.UnsupportedTypeException.#ctor">
+            <summary>
+            Create a new instance of the exception
+            </summary>
+        </member>
+        <member name="M:NokLib.UnsupportedTypeException.#ctor(System.String)">
+            <summary>
+            Create a new instance of the exception with a message describing the cause of the exception
+            </summary>
+            <param name="message">Cause of the exception</param>
+        </member>
+        <member name="M:NokLib.UnsupportedTypeException.#ctor(System.Type)">
+            <summary>
+            Create a new instance of the exception with a message describing what type is not supported
+            </summary>
+            <param name="actualType">The unsupported type</param>
+        </member>
+        <member name="M:NokLib.UnsupportedTypeException.#ctor(System.Type,System.String)">
+            <summary>
+            Create a new instance of the exception with a message describing what type is not supported and the unsupported type
+            </summary>
+            <param name="actualType">The unsupported type</param>
+            <param name="message">Cause of the exception</param>
+        </member>
+        <member name="M:NokLib.UnsupportedTypeException.#ctor(System.Type,System.Type,System.String)">
+            <summary>
+            Create a new instance of the exception with a message describing what type is not supported, the unsupported type and the type that is supported
+            </summary>
+            <param name="actualType">The unsupported type</param>
+            <param name="expectedType">The type that was expected</param>
+            <param name="message">Cause of the exception</param>
+        </member>
+        <member name="T:NokLib.InvalidHandleException">
+            <summary>
+            Thrown when an invalid handle is used
+            </summary>
+        </member>
+        <member name="M:NokLib.InvalidHandleException.#ctor">
+            <summary>
+            Create a new instance of the exception
+            </summary>
+        </member>
+        <member name="M:NokLib.InvalidHandleException.#ctor(System.String)">
+            <summary>
+            Create a new instance of the exception with a message describing the cause of the exception
+            </summary>
+            <param name="message">Cause of the exception</param>
+        </member>
+        <member name="T:NokLib.InvalidSizeException">
+            <summary>
+            Thrown when an object has invalid size
+            </summary>
+        </member>
+        <member name="M:NokLib.InvalidSizeException.#ctor">
+            <summary>
+            Create a new instance of the exception
+            </summary>
+        </member>
+        <member name="M:NokLib.InvalidSizeException.#ctor(System.Int32,System.Int32,System.String)">
+            <summary>
+            Create a new instance of the exception with a message describing the cause of the exception
+            </summary>
+            <param name="expectedSize">The expected size of the object</param>
+            <param name="actualSize">The actual size of the object</param>
+            <param name="message">Cause of the exception</param>
+        </member>
+        <member name="M:NokLib.InvalidSizeException.#ctor(System.String)">
+            <summary>
+            Create a new instance of the exception with a message describing the cause of the exception
+            </summary>
+            <param name="message">Cause of the exception</param>
+        </member>
+        <member name="T:NokLib.SizeMismatchException">
+            <summary>
+            Thrown when sizes of two array do not match
+            </summary>
+        </member>
+        <member name="M:NokLib.SizeMismatchException.#ctor">
+            <summary>
+            Create a new instance of the exception
+            </summary>
+        </member>
+        <member name="M:NokLib.SizeMismatchException.#ctor(System.String)">
+            <summary>
+            Create a new instance of the exception with a message describing the cause of the exception
+            </summary>
+            <param name="message">Cause of the exception</param>
+        </member>
+        <member name="T:NokLib.DuplicateObjectInCollectionException">
+            <summary>
+            Thrown when an attempt to insert an object into a collection already containing it is made
+            </summary>
+        </member>
+        <member name="M:NokLib.DuplicateObjectInCollectionException.#ctor">
+            <summary>
+            Create a new instance of the exception
+            </summary>
+        </member>
+        <member name="M:NokLib.DuplicateObjectInCollectionException.#ctor(System.String)">
+            <summary>
+            Create a new instance of the exception with a message describing the cause of the exception
+            </summary>
+            <param name="message">Cause of the exception</param>
+        </member>
+        <member name="T:NokLib.ConcurrencyException">
+            <summary>
+            Thrown when an operation fails because of issues connected with concurrency
+            </summary>
+        </member>
+        <member name="M:NokLib.ConcurrencyException.#ctor">
+            <summary>
+            Create a new instance of the exception
+            </summary>
+        </member>
+        <member name="M:NokLib.ConcurrencyException.#ctor(System.String)">
+            <summary>
+            Create a new instance of the exception with a message describing the cause of the exception
+            </summary>
+            <param name="message">Cause of the exception</param>
+        </member>
+        <member name="M:NokLib.CastingExtensions.ToInt(System.Boolean)">
+            <summary>
+            If true, returns 1, else returns 0
+            </summary>
+            <param name="boolean"></param>
+        </member>
+        <member name="M:NokLib.CastingExtensions.ToBool(System.Int32)">
+            <summary>
+            If 0, returns false, else returns true
+            </summary>
+            <param name="val"></param>
+        </member>
+        <member name="M:NokLib.CastingExtensions.ToFloat(System.Double)">
+            <summary>
+            Shorthand for writing (float)value
+            </summary>
+            <param name="d"></param>
+        </member>
+        <member name="M:NokLib.CollectionExtensions.DisposeObjects``1(System.Collections.Generic.ICollection{``0})">
+            <summary>
+            Calls Dispose on all items in the collection, then clears it
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="collection"></param>
+        </member>
+        <member name="M:NokLib.CollectionExtensions.DisposeWith``1(System.Collections.Generic.ICollection{``0},System.Action{``0})">
+            <summary>
+            Calls the disposeFunction with each item in the collection and then clears the list
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="collection"></param>
+            <param name="disposeFunction"></param>
+        </member>
+        <member name="M:NokLib.DelegateExtensions.InvokeSafely(System.MulticastDelegate,System.Boolean,System.Object[])">
+            <summary>
+            Invokes every delegate from the GetInvocationList method regardless of any exceptions that might happen during invocation
+            </summary>
+            <param name="deleg"></param>
+            <param name="logExceptions">Log thrown exceptions using System.Diagnostics.Debug class?</param>
+            <param name="arg">Arguments for the delegate</param>
+        </member>
+        <member name="M:NokLib.DelegateExtensions.InvokeSafely(System.Delegate,System.Boolean,System.Object[])">
+            <summary>
+            Invokes the delegate and logs any exceptions caught during invocation using System.Diagnostics.Debug class
+            </summary>
+            <param name="deleg"></param>
+            <param name="logExceptions">Log thrown exceptions using System.Diagnostics.Debug class?</param>
+            <param name="arg">Arguments for the delegate</param>
+        </member>
+        <member name="M:NokLib.EnumExtensions.ToStringNonAlloc``1(``0)">
+            <summary>
+            Converts the value to string using EnumStringifier
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="val"></param>
+        </member>
+        <member name="M:NokLib.EnumExtensions.GetValues``1(``0)">
+            <summary>
+             Returns an array of all enum values of the calling enum
+            </summary>
+            <typeparam name="T">enum which values should be converted</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.EnumExtensions.GetNames``1(``0)">
+            <summary>
+            Returns an array of all enum value names
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="_enum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.IEnumerableExtensions.DisposeObjects``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Calls Dispose for each item from the enumerable
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="collection"></param>
+        </member>
+        <member name="M:NokLib.IEnumerableExtensions.DisposeObjectsWith``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            For each enumerated item calls the disposeFunction with the item as an argument
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="collection"></param>
+            <param name="disposeFunction"></param>
+        </member>
+        <member name="M:NokLib.IEnumerableExtensions.MinMax``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Finds both the minimum and maximum of the collection in one pass
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="collection"></param>
+        </member>
+        <member name="M:NokLib.IEnumerableExtensions.MinMax``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0,System.Int32})">
+            <summary>
+            Finds both the minimum and maximum of the collection in one pass using the supplied compareFunction
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="collection"></param>
+            <param name="compareFunction">Comparer function for the items in the collection, should follow the IComparable method (negative result = less, 0 = equal, positive result = greater)</param>
+        </member>
+        <member name="M:NokLib.IEnumerableExtensions.FormatToString``1(System.Collections.Generic.IEnumerable{``0})">
+            <inheritdoc cref="M:NokLib.IEnumerableExtensions.FormatToString``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String})"/>
+        </member>
+        <member name="M:NokLib.IEnumerableExtensions.FormatToString``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String})">
+            <summary>
+            Formats the output of the enumerable into a string
+            </summary>
+            <param name="collection"></param>
+            <param name="customFormatter">Function for converting the object into string</param>
+        </member>
+        <member name="M:NokLib.IEnumerableExtensions.FormatToString(System.Collections.IEnumerable)">
+            <inheritdoc cref="M:NokLib.IEnumerableExtensions.FormatToString(System.Collections.IEnumerable,System.Func{System.Object,System.String})"/>
+        </member>
+        <member name="M:NokLib.IEnumerableExtensions.FormatToString(System.Collections.IEnumerable,System.Func{System.Object,System.String})">
+            <summary>
+            Formats the output of the enumerable into a string
+            </summary>
+            <param name="collection"></param>
+            <param name="customFormatter">Function for converting the objects into string</param>
+        </member>
+        <member name="M:NokLib.IEnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            Performs the specified action on all elements of the enumerable. DOES NOT MODIFY THE ENUMERABLE.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="collection"></param>
+            <param name="action"></param>
+        </member>
+        <member name="M:NokLib.MiscellaneousExtensions.SafeToString``1(``0)">
+            <summary>
+            Performs all the null checks to guarantee that a string will be returned.
+            If null should be returned it will return a string "null", which is a constant, so no allocations will occur
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.StringExtensions.ToUnicodeByteArray(System.String)">
+            <summary>
+            Converts the string to a unicode byte array using Encoding.Unicode.GetBytes
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.StringExtensions.ToAsciiByteArray(System.String)">
+            <summary>
+            Converts the string to a unicode byte array using Encoding.ASCII.GetBytes
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.StringExtensions.AppendIfMissing(System.String,System.String)">
+            <summary>
+             Appends suffix to string if it doesn't end with it
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.StringExtensions.PrependIfMissing(System.String,System.String)">
+            <summary>
+            Prepends prefix to string if it doesn't start with it
+            </summary>
+            <param name="str"></param>
+            <param name="prefix"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.StringExtensions.TrimIfLongerThan(System.String,System.Int32)">
+            <summary>
+            If string is longer than maxLength a substring of length maxLength is returned, otherwise string is unchanged
+            </summary>
+            <param name="str"></param>
+            <param name="maxLength">Maximum length of the string</param>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.StringExtensions.FixWindowsPath(System.String)">
+            <summary>
+            Replaces all \ with / for compatibility
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.StringExtensions.WindowsifyPath(System.String)">
+            <summary>
+            Replaces all / with \ for Windows compatibility, useful when using the Windows Registry
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="T:NokLib.IDeconstructible`1">
+            <summary>
+            Enables use of the
+            <see href="https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/deconstruct">tuple deconstruction syntax</see>
+            </summary>
+        </member>
+        <member name="M:NokLib.IDeconstructible`1.Deconstruct(`0@)">
+            <summary>
+            Deconstructs the object
+            </summary>
+        </member>
+        <member name="T:NokLib.IDeconstructible`2">
+            <summary>
+            Enables use of the
+            <see href="https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/deconstruct">tuple deconstruction syntax</see>
+            </summary>
+        </member>
+        <member name="M:NokLib.IDeconstructible`2.Deconstruct(`0@,`1@)">
+            <summary>
+            Deconstructs the object
+            </summary>
+        </member>
+        <member name="T:NokLib.IDeconstructible`3">
+            <summary>
+            Enables use of the
+            <see href="https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/deconstruct">tuple deconstruction syntax</see>
+            </summary>
+        </member>
+        <member name="M:NokLib.IDeconstructible`3.Deconstruct(`0@,`1@,`2@)">
+            <summary>
+            Deconstructs the object
+            </summary>
+        </member>
+        <member name="T:NokLib.IDeconstructible`4">
+            <summary>
+            Enables use of the
+            <see href="https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/deconstruct">tuple deconstruction syntax</see>
+            </summary>
+        </member>
+        <member name="M:NokLib.IDeconstructible`4.Deconstruct(`0@,`1@,`2@,`3@)">
+            <summary>
+            Deconstructs the object
+            </summary>
+        </member>
+        <member name="T:NokLib.IDeconstructible`5">
+            <summary>
+            Enables use of the
+            <see href="https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/deconstruct">tuple deconstruction syntax</see>
+            </summary>
+        </member>
+        <member name="M:NokLib.IDeconstructible`5.Deconstruct(`0@,`1@,`2@,`3@,`4@)">
+            <summary>
+            Deconstructs the object
+            </summary>
+        </member>
+        <member name="T:NokLib.IDeconstructible`6">
+            <summary>
+            Enables use of the
+            <see href="https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/deconstruct">tuple deconstruction syntax</see>
+            </summary>
+        </member>
+        <member name="M:NokLib.IDeconstructible`6.Deconstruct(`0@,`1@,`2@,`3@,`4@,`5@)">
+            <summary>
+            Deconstructs the object
+            </summary>
+        </member>
+        <member name="T:NokLib.IDeconstructible`7">
+            <summary>
+            Enables use of the
+            <see href="https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/deconstruct">tuple deconstruction syntax</see>
+            </summary>
+        </member>
+        <member name="M:NokLib.IDeconstructible`7.Deconstruct(`0@,`1@,`2@,`3@,`4@,`5@,`6@)">
+            <summary>
+            Deconstructs the object
+            </summary>
+        </member>
+        <member name="M:NokLib.INumericParser`1.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,`0@)">
+            <summary>
+            Parses a string representation of a number, supports formatting trough NumberStyles and optionally IFormatProvider
+            </summary>
+            <param name="input"></param>
+            <param name="style"></param>
+            <param name="formatProvider"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.INumericParser`1.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)">
+            <summary>
+            Parses a string representation of a number, supports optional formatting trough NumberStyles and IFormatProvider. An exception is thrown when parsing fails
+            </summary>
+            <param name="input"></param>
+            <param name="style"></param>
+            <param name="formatProvider"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.IObjectPool`1.Get">
+            <summary>
+            Get a pooled instance of an object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.IObjectPool`1.SafeGet">
+            <summary>
+            Get a pooled instance of an object using the PooledObject wrapper (use with the 'using' keyword for easy releasing)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.IObjectPool`1.TryGet(`0@)">
+            <summary>
+            Tries to get a pooled instance of an object
+            </summary>
+            <param name="obj"></param>
+            <returns>False if no objects are available and the pool has reached its capacity</returns>
+        </member>
+        <member name="M:NokLib.IObjectPool`1.TrySafeGet(NokLib.PooledObject{`0}@)">
+            <summary>
+            Tries to get a pooled instance of an object using the PooledObject wrapper
+            </summary>
+            <param name="safeObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.IObjectPool`1.Release(`0)">
+            <summary>
+            Releases the object back to the pool
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:NokLib.IObjectPool`1.Clear">
+            <summary>
+            Clears the pool and releases resources used by the pooled objects
+            </summary>
+        </member>
+        <member name="P:NokLib.IObjectPool`1.Capacity">
+            <summary>
+            Maximum number of allocated objects
+            </summary>
+        </member>
+        <member name="P:NokLib.IObjectPool`1.Allocated">
+            <summary>
+            Total number of already allocated objects
+            </summary>
+        </member>
+        <member name="P:NokLib.IObjectPool`1.AvailableObjects">
+            <summary>
+            Number of available objects in this pool
+            </summary>
+        </member>
+        <member name="T:NokLib.IParser`1">
+            <summary>
+            Interface for implementing custom string parsers
+            </summary>
+            <typeparam name="T">Type this parser is able to parse</typeparam>
+        </member>
+        <member name="M:NokLib.IParser`1.TryParse(System.String,`0@)">
+            <summary>
+            Tries to convert a string representation of T into an instance of T
+            </summary>
+            <param name="input">string representation of an object</param>
+            <param name="result">Parser result</param>
+            <returns>True if parsing was successful</returns>
+            <exception cref="T:System.FormatException">Thrown when the input string couldn't be successfully parsed</exception>
+        </member>
+        <member name="M:NokLib.IParser`1.Parse(System.String)">
+            <summary>
+            Converts a string representation of T into an instance of T, throws a FormatException if parsing fails
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+            <exception cref="T:System.FormatException">Thrown when the parsing fails</exception>
+        </member>
+        <member name="P:NokLib.IRandomProvider.SystemRandom">
+            <summary>
+            Returns a new instance of a System.Random class wrapped in NokLib.SystemRandom for IRandomProvider interface compatibility
+            </summary>
+        </member>
+        <member name="P:NokLib.IRandomProvider.Seed">
+            <summary>
+            Returns the seed used by this random number generator
+            </summary>
+        </member>
+        <member name="P:NokLib.IRandomProvider.InclusiveMinimum">
+            <summary>
+            Is the lower ĺimit of this random number generator inclusive?
+            </summary>
+        </member>
+        <member name="P:NokLib.IRandomProvider.InclusiveMaximum">
+            <summary>
+            Is The upper limit of this random number generator inclusive?
+            </summary>
+        </member>
+        <member name="M:NokLib.IRandomProvider.SetSeed(System.Int64)">
+            <summary>
+            Sets the seed of this random number generator
+            </summary>
+            <param name="seed"></param>
+        </member>
+        <member name="M:NokLib.IRandomProvider.NextInt">
+            <summary>
+             Generates a non-negative random number
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.IRandomProvider.NextInt(System.Int32)">
+            <summary>
+            Generates a number between 0 and max
+            </summary>
+            <param name="max">Upper limit of the generated number range</param>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.IRandomProvider.NextInt(System.Int32,System.Int32)">
+            <summary>
+            Generates a number between min and max
+            </summary>
+            <param name="min">Lower limit of the generated number range </param>
+            <param name="max">Upper limit of the generated number range</param>
+        </member>
+        <member name="M:NokLib.IRandomProvider.NextDouble">
+            <summary>
+            Generates a non-negative random number
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.IRandomProvider.NextDouble(System.Double)">
+            <summary>
+            Generates a number between 0 and max
+            </summary>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.IRandomProvider.NextDouble(System.Double,System.Double)">
+            <summary>
+            Generates a number between min and max
+            </summary>
+            <param name="min"></param>
+            <param name="max"></param>
+        </member>
+        <member name="M:NokLib.IRandomProvider.Percentage">
+            <summary>
+            Generates a floating point number between 0 and 1
+            </summary>
+        </member>
+        <member name="T:NokLib.Interpolation">
+            <summary>
+            Methods for interpolating values
+            </summary>
+        </member>
+        <member name="M:NokLib.Interpolation.LinearSignedClamped(System.Double,System.Double,System.Double)">
+            <summary>
+            Linear interpolation with time clamped between -1 and 1
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <param name="time"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.Interpolation.LinearSignedClamped(System.Int32,System.Int32,System.Double)">
+            <summary>
+            Linear interpolation with time clamped between -1 and 1
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <param name="time"></param>
+            <returns></returns>
+        </member>
+        <member name="T:NokLib.MathN">
+            <summary>
+            Basic math library
+            </summary>
+        </member>
+        <member name="M:NokLib.MovingAverage.#ctor(System.Int32)">
+            <summary>
+            Create a new MovingAverage calculator
+            </summary>
+            <param name="size">Size of the internal buffer, bigger size means a longer record of values</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:NokLib.MovingAverage.Add(System.Double)">
+            <summary>
+            Add another value to the average
+            </summary>
+            <param name="next"></param>
+            <returns>New average</returns>
+        </member>
+        <member name="T:NokLib.Remap">
+            <summary>
+            Methods for remapping values from old range to new
+            </summary>
+        </member>
+        <member name="T:NokLib.NokLibBase">
+            <summary>
+            Class for storing version info about the library
+            </summary>
+        </member>
+        <member name="F:NokLib.NokLibBase.Version">
+            <summary>
+            Version of the class
+            </summary>
+        </member>
+        <member name="F:NokLib.NokLibBase.VersionName">
+            <summary>
+            Name of the build
+            </summary>
+        </member>
+        <member name="F:NokLib.NokLibBase.FullVersionName">
+            <summary>
+            Full name of the build
+            </summary>
+        </member>
+        <member name="T:NokLib.StreamScanner">
+            <summary>
+            Utility for easier stream reading
+            </summary>
+        </member>
+        <member name="P:NokLib.StreamScanner.ConsoleStreamScanner">
+            <summary>
+            Returns a new instance of a StreamScanner, reading from Console Standard Input
+            </summary>
+        </member>
+        <member name="M:NokLib.StreamScanner.#ctor(System.IO.Stream)">
+            <summary>
+            Creates new StreamScanner for the specified stream
+            </summary>
+            <param name="inputStream">The stream the scanner will use, must support reading</param>
+        </member>
+        <member name="M:NokLib.StreamScanner.#ctor(System.IO.StreamReader)">
+            <summary>
+            Creates new StreamReader from the BaseStream of the provided StreamReader
+            </summary>
+            <param name="reader"></param>
+        </member>
+        <member name="M:NokLib.StreamScanner.ReadLine">
+            <summary>
+            Reads the stream until EoF, or newline character
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.StreamScanner.Read">
+            <summary>
+            Reads next character from the stream, throws an exception if reading fails
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.IO.EndOfStreamException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:NokLib.StreamScanner.TryRead(System.Char@)">
+            <summary>
+            Reads next character from the stream
+            </summary>
+            <param name="character"></param>
+            <returns>Returns true if the read was successful</returns>
+        </member>
+        <member name="M:NokLib.StreamScanner.ReadInt">
+            <summary>
+            Reads next integer from the stream
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.StreamScanner.ReadLong">
+            <summary>
+            Reads next long from the stream
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.StreamScanner.ReadDouble(System.String)">
+            <summary>
+            Reads the next double from the stream
+            </summary>
+            <param name="delimiters">Valid delimiters used for decimal place</param>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.StreamScanner.Dispose">
+            <summary>
+            Release resources used by the StreamScanner object
+            </summary>
+        </member>
+        <member name="F:NokLib.Parsers.FastIntParser.Instance">
+            <summary>
+            Global instance of IntParser
+            </summary>
+        </member>
+        <member name="T:NokLib.Parsers.FastUIntParser">
+            <summary>
+            Integer parser implementing the IParser interface
+            </summary>
+        </member>
+        <member name="F:NokLib.Parsers.FastUIntParser.Instance">
+            <summary>
+            Global instance of IntParser
+            </summary>
+        </member>
+        <member name="M:NokLib.Parsers.FastUIntParser.TryParseS(System.String,System.UInt32@)">
+            <summary>
+            Static syntax sugar method for calling IntParser.Instance.TryParse
+            </summary>
+            <param name="input"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="T:NokLib.ConcurrentObjectPool`1">
+            <summary>
+            A thread-safe version of the ObjectPool
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:NokLib.ConcurrentObjectPool`1.PreAllocate(System.Int32)">
+            <inheritdoc cref="M:NokLib.ObjectPoolBase`1.PreAllocate(System.Int32)"/>
+        </member>
+        <member name="T:NokLib.ObjectPool`1">
+            <summary>
+            A generic, stack-based object pool
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:NokLib.ObjectPool`1.#ctor(System.Action{`0},System.Func{`0},System.Action{`0},System.Action{`0},System.Int32,System.Boolean)">
+            <summary>
+            Create a new ObjectPool
+            </summary>
+            <param name="onDispose">Used for disposal of the object</param>
+            <param name="createObject">Function for allocating new objects, if not specified new instances will be created using the Activator.CreateInstance method</param>
+            <param name="onGet">Gets called when an object is rented</param>
+            <param name="onRelease">Gets called when an object is released</param>
+            <param name="capacity">The maximum allowed capacity of the pool</param>
+            <param name="initialAllocation">How many objects to preallocate whent the pool is created</param>
+            <param name="collectionCheck">Prevents an object from being returned twice</param>
+        </member>
+        <member name="M:NokLib.ObjectPool`1.PreAllocate(System.Int32)">
+            <inheritdoc cref="M:NokLib.ObjectPoolBase`1.PreAllocate(System.Int32)"/>
+        </member>
+        <member name="M:NokLib.ObjectPoolBase`1.#ctor(System.Action{`0},System.Func{`0},System.Action{`0},System.Action{`0},System.Int32,System.Boolean)">
+            <summary>
+            Create a new ObjectPool
+            </summary>
+            <param name="onDispose">Used for disposal of the object</param>
+            <param name="createObject">Function for allocating new objects, if not specified new instances will be created using the Activator.CreateInstance method</param>
+            <param name="onGet">Gets called when an object is rented</param>
+            <param name="onRelease">Gets called when an object is released</param>
+            <param name="capacity">The maximum allowed capacity of the pool</param>
+            <param name="doDuplicateCheck">Prevents an object from being returned twice</param>
+        </member>
+        <member name="M:NokLib.ObjectPoolBase`1.PreAllocate(System.Int32)">
+            <summary>
+            Preallocates a specified amount of objects, throws an exception if <paramref name="amount"/> exceeds <see cref="P:NokLib.ObjectPoolBase`1.Capacity"/>
+            </summary>
+            <param name="amount"></param>
+            <exception cref="T:NokLib.LimitReachedException"></exception>
+        </member>
+        <member name="M:NokLib.ObjectPoolBase`1.Get">
+            <summary>
+            Get a pooled instance of the object, if no allocated instance is available, a new instance is allocated. If there are no allocated instances left and the pools capacity has been reached, a LimitReachedException is thrown
+            </summary>
+            <returns>The instanced object</returns>
+        </member>
+        <member name="M:NokLib.ObjectPoolBase`1.SafeGet">
+            <summary>
+            Get a pooled instance of the object wrapped in PooledObject, use with the 'using' keyword for the object to be automatically released
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.ObjectPoolBase`1.TryGet(`0@)">
+            <summary>
+            Attempt to get a pooled instance of the object, if no allocated instance is available, a new instance is allocated.
+            </summary>
+            <param name="obj"></param>
+            <returns>False if a new instance needs to be allocated, but pools capacity has been reached. Otherwise returns true</returns>
+        </member>
+        <member name="M:NokLib.ObjectPoolBase`1.TrySafeGet(NokLib.PooledObject{`0}@)">
+            <summary>
+            Try to get a pooled instance of the object wrapped in PooledObject, use with the 'using' keyword for the object to be automatically released
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.ObjectPoolBase`1.Release(`0)">
+            <summary>
+            Releases the object back to the pool, if DuplicateChecking is enabled and the object has already been released a DuplicateObjectInCollectionException is thrown
+            </summary>
+            <param name="obj">The object to be released</param>
+        </member>
+        <member name="M:NokLib.ObjectPoolBase`1.Clear">
+            <summary>
+            Calls the OnDispose method (if specified) for each allocated object and clears the pool. If no OnDispose method was specified and the item type stored in this pool implements IDisposable interface the objects Dispose method is called instead
+            </summary>
+        </member>
+        <member name="M:NokLib.ObjectPoolBase`1.HasBeenReturned(`0)">
+            <summary>
+            Has the object been returned already?
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.ObjectPoolBase`1.StackPush(`0)">
+            <summary>
+            Push to the internal stack
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:NokLib.ObjectPoolBase`1.StackPop">
+            <summary>
+            Pop from the internal stack
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.ObjectPoolBase`1.StackTryPop(`0@)">
+            <summary>
+            Try to pop from the internal stack
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NokLib.ObjectPoolBase`1.StackClear">
+            <summary>
+            Clear the internal stack
+            </summary>
+        </member>
+        <member name="M:NokLib.ObjectPoolBase`1.StackAsEnumerable">
+            <summary>
+            Get internal stack as enumerable
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:NokLib.StringBuilderPool.StrigBuilderLengthDeallocationThreshold">
+            <summary>
+            If released StringBuilders length exceeds this threshold its length and capacity is set to 0 to release its unused memory
+            </summary>
+        </member>
+        <member name="T:NokLib.SystemRandom">
+            <summary>
+            Adapter for System.Random to be compatible with IRandomProvider interface
+            </summary>
+        </member>
+        <member name="M:NokLib.SystemRandom.#ctor">
+            <summary>
+            Creates a new instance of SystemRandom with a random seed, the seed is generated with the same method the System.Random class uses
+            </summary>
+        </member>
+        <member name="P:NokLib.SystemRandom.SeedKnown">
+            <summary>
+            Is the seed known? Returns false if generator was created without specifying seed, or reset.
+            </summary>
+            <remarks>Relevant only for versions NetCore 6.0 or higher, where System.Random seed generation was changed drastically</remarks>
+        </member>
+        <member name="M:NokLib.SystemRandom.ResetSeed">
+            <summary>
+            Reinitializes the random number generator with a new generated seed
+            </summary>
+        </member>
+        <member name="T:NokLib.Reflection.ClassReflector">
+            <summary>
+            Utilities to help with class reflection
+            </summary>
+        </member>
+        <member name="M:NokLib.Reflection.ClassReflector.GetAllDerivedTypesOfType``1">
+            <summary>
+             Get a list of all types deriving from type T
+            </summary>
+            <typeparam name="T">Parent type</typeparam>
+             <returns>A list of all types deriving from type T</returns>
+        </member>
+        <member name="M:NokLib.Reflection.ClassReflector.GetAllPublicDerivedTypesOfType``1">
+            <summary>
+            Get a list of all public types deriving from type T
+            </summary>
+            <typeparam name="T">Parent type</typeparam>
+             <returns>A list of all public types deriving from type T that are publicly visible</returns>
+        </member>
+        <member name="M:NokLib.Reflection.ClassReflector.GetAllDerivedTypesOfType(System.Type)">
+            <summary>
+            Get a list of all types deriving from type T
+            </summary>
+            <param name="type">Parent type</param>
+             <returns>A list of all types deriving from type T that are publicly visible</returns>
+        </member>
+        <member name="M:NokLib.Reflection.ClassReflector.GetAllPublicDerivedTypesOfType(System.Type)">
+            <summary>
+            Get a list of all public types deriving from type T
+            </summary>
+            <param name="type">Parent type</param>
+             <returns>A list of all types deriving from type T that are publicly visible</returns>
+        </member>
+        <member name="M:NokLib.Reflection.ClassReflector.GetConstantsFrom``1">
+            <summary>
+             Get all constant fields from type
+            </summary>
+            <typeparam name="T">Type to scan</typeparam>
+             <returns>A FieldInfo array of all constants found in the provided type</returns>
+        </member>
+        <member name="M:NokLib.Reflection.ClassReflector.GetConstantsFrom(System.Type)">
+            <summary>
+             Get all constant fields from type
+            </summary>
+            <param name="type">Type to scan</param>
+             <returns>A FieldInfo array of all constants found in the provided type</returns>
+        </member>
+        <member name="M:NokLib.Reflection.ClassReflector.GetConstantsOfTypeFrom``1(System.Type)">
+            <summary>
+             Get all constants of specific type from a class
+            </summary>
+             <typeparam name="T">Type to be scanned</typeparam>
+             <param name="constantType">Type of constants to return</param>
+             <returns>A FieldInfo array of all constants of specified type found in the source type</returns>
+        </member>
+        <member name="M:NokLib.Reflection.ClassReflector.GetConstantsOfTypeFrom(System.Type,System.Type)">
+            <summary>
+             Get all constants of specific type from a class
+            </summary>
+             <param name="sourceType">Type to be scanned</param>
+             <param name="constantType">Type of constants to return</param>
+             <returns>A FieldInfo array of all constants of specified type found in the source type</returns>
+        </member>
+        <member name="T:NokLib.RingBuffer`1">
+            <summary>
+            A generic ring buffer, elements are ordered oldest to newest, oldest element at index 0
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:NokLib.UnsafeCastingExtensions.ToIntFast(System.Boolean)">
+            <summary>
+            Converts boolean to an integer (false = 0, true = 1) trough pointer magic, which is as fast as it can get (two processor instructions)
+            </summary>
+            <param name="boolean"></param>
+        </member>
+        <member name="M:NokLib.UnsafeCastingExtensions.ToLongFast``1(``0)">
+            <summary>
+            Converts an enum object to long using pointer magic, which is very fast
+            <see href="https://stackoverflow.com/a/61004509">Credit</see>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+        </member>
+        <member name="M:NokLib.UnsafeCastingExtensions.ToIntFast``1(``0,System.Boolean)">
+            <summary>
+            Converts an enum object to int using pointer magic, which is very fast (usually one processor instruction) 
+            <see href="https://stackoverflow.com/a/61004509">Credit</see>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <param name="force">Force conversion of types too large to fit into an int, CAN RESULT IN DATA LOSS</param>
+            <exception cref="!:TypeMismatchException">Thrown when the enum type is backed by an 8 byte value (eg. long/ulong), as int fits only 4 bytes</exception>
+        </member>
+        <member name="M:NokLib.UnsafeCastingExtensions.ToEnumFast``1(System.Int64)">
+            <summary>
+            Converts an enum object to long using pointer magic, which is very fast (usually one processor instruction) 
+            <see href="https://stackoverflow.com/a/61004509">Credit</see>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+        </member>
+        <member name="M:NokLib.UnsafeCastingExtensions.ToEnumFast``1(System.Int32)">
+            <summary>
+            Converts an enum object to long using pointer magic, which is very fast (usually one processor instruction) 
+            <see href="https://stackoverflow.com/a/61004509">Credit</see>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+        </member>
+        <member name="M:NokLib.UnsafeCastingExtensions.ToEnumFast``1(System.Int16)">
+            <summary>
+            Converts an enum object to long using pointer magic, which is very fast (usually one processor instruction) 
+            <see href="https://stackoverflow.com/a/61004509">Credit</see>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+        </member>
+        <member name="M:NokLib.UnsafeCastingExtensions.ToEnumFast``1(System.Byte)">
+            <summary>
+            Converts an enum object to long using pointer magic, which is very fast (usually one processor instruction) 
+            <see href="https://stackoverflow.com/a/61004509">Credit</see>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+        </member>
+    </members>
+</doc>

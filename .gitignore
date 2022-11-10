@@ -1,0 +1,14 @@
+# Godot 4+ specific ignores
+.godot/
+
+#VS
+.vs/
+
+# Misc
+*.svg
+*.godot
+*.import
+*.old
+
+scenes/
+scripts/

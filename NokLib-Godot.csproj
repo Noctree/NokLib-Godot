@@ -1,0 +1,12 @@
+<Project Sdk="Godot.NET.Sdk/4.0.0-beta.4">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>NokLibGodot</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NokLib">
+      <HintPath>Dependencies\NokLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
